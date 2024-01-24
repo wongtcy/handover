@@ -34,13 +34,13 @@ namespace Handover
             setTimer();
         }
 
-        private void setTimer()
-        {
-            //DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            //dispatcherTimer.Tick += dispatcherTimer_Tick;
-            //dispatcherTimer.Interval = TimeSpan.FromSeconds(10);
-            //dispatcherTimer.Start();
-        }
+        //private void setTimer()
+        //{
+        //    DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+        //    dispatcherTimer.Tick += dispatcherTimer_Tick;
+        //    dispatcherTimer.Interval = TimeSpan.FromSeconds(10);
+        //    dispatcherTimer.Start();
+        //}
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
