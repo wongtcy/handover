@@ -5,16 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Handover"
         mc:Ignorable="d"
-        Title="keyWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Images/Columnbackground.png"/>
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="288*">
-            </ColumnDefinition>
-            <ColumnDefinition Width="245*"/>
-            <ColumnDefinition Width="267*"/>
-        </Grid.ColumnDefinitions>
-    </Grid>
+        Title="keyWindow" Height="450" Width="800" WindowState="Maximized" WindowStyle="ThreeDBorderWindow">
+
+    <TabControl Margin="5">
+        <TabItem Header="Tab1">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/Columnbackground.png"/>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="Col1" Width="284*" />
+                    <ColumnDefinition x:Name="Col2" Width="118*" />
+                    <ColumnDefinition x:Name="Col3" Width="10*" />
+                    <ColumnDefinition Width="54*"/>
+                    <ColumnDefinition x:Name="Col4" Width="56*" />
+                    <ColumnDefinition x:Name="Col5" Width="152*" />
+                    <ColumnDefinition x:Name="Col6" Width="55*" />
+                    <ColumnDefinition x:Name="Col7" Width="55*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="Row1"/>
+                    <RowDefinition x:Name="Row2"/>
+                    <RowDefinition x:Name="Row3"/>
+                    <RowDefinition x:Name="Row4"/>
+                    <RowDefinition x:Name="Row5"/>
+                    <RowDefinition x:Name="Row6"/>
+                    <RowDefinition x:Name="Row7"/>
+                    <RowDefinition x:Name="Row8"/>
+                    <RowDefinition x:Name="Row9"/>
+                    <RowDefinition x:Name="Row10"/>
+                    <RowDefinition x:Name="Row11"/>
+                    <RowDefinition x:Name="Row12"/>
+                    <RowDefinition x:Name="Row13"/>
+                </Grid.RowDefinitions>
+
+                <Label FontFamily="Times New Roman" FontSize="25" Grid.Row ="0" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Key" Width="52" Grid.RowSpan="2" Height="39" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="2" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Main Door" Height="30"  Width="99" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="3" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="left" Content="Living Room"  Height="31"  Width="118"/>
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="4" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Kitchen" Height="30"  Width="74"  />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="5" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Storage Room" Height="31"  Width="124" Grid.ColumnSpan="2"/>
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="6" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Bed Room 1"  Height="30"  Width="111" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="7" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Bed Room 2"  Height="31"  Width="111" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="8" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Bed Room 3"  Height="30"  Width="111" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="9" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Bed Room 4" Height="31" Width="111" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="10" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Worker Room" Height="30"  Width="124" Grid.ColumnSpan="2" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="11" Grid.Column = "1"  VerticalAlignment="Center" HorizontalAlignment="Left" Content="Windows" Height="31"  Width="86" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="12" Grid.Column = "1" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Mail Box" Height="30"  Width="86"  />
+
+                <Slider Name="Sliderkeymaindoor" Grid.Column ="2" Grid.Row="2" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeymaindoor_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeylivingroom" Grid.Column ="2" Grid.Row="3" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeylivingroom_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeykitchen" Grid.Column ="2" Grid.Row="4" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeykitchen_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeystorageroom" Grid.Column ="2" Grid.Row="5" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeystorageroom_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeybedroom1" Grid.Column ="2" Grid.Row="6" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeybedroom1_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeybedroom2" Grid.Column ="2" Grid.Row="7" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeybedroom2_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeybedroom3" Grid.Column ="2" Grid.Row="8" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeybedroom3_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeybedroom4" Grid.Column ="2" Grid.Row="9" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeybedroom4_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeyworkerroom" Grid.Column ="2" Grid.Row="10" VerticalAlignment="Center" Height="18"  ValueChanged="Sliderkeyworkerroom_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeywindow" Grid.Column ="2" Grid.Row="11" VerticalAlignment="Center" Height="18"  ValueChanged="Sliderkeywindow_ValueChanged" Grid.ColumnSpan="2"/>
+                <Slider Name="Sliderkeymailbox" Grid.Column ="2" Grid.Row="12" VerticalAlignment="Center" Height="18" ValueChanged="Sliderkeymailbox_ValueChanged" Grid.ColumnSpan="2"/>
+
+                <TextBox Name="Textboxmaindoor" Grid.Column ="4" Grid.Row="2" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxlivingroom" Grid.Column ="4" Grid.Row="3" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxkitchen" Grid.Column ="4" Grid.Row="4" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxstorageroom" Grid.Column ="4" Grid.Row="5" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxbedroom1" Grid.Column ="4" Grid.Row="6" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxbedroom2" Grid.Column ="4" Grid.Row="7" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxbedroom3" Grid.Column ="4" Grid.Row="8" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxbedroom4" Grid.Column ="4" Grid.Row="9" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxworkerroom" Grid.Column ="4" Grid.Row="10" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxwindow" Grid.Column ="4" Grid.Row="11" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxmailbox" Grid.Column ="4" Grid.Row="12" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+
+                <Label FontFamily="Times New Roman" FontSize="25" Grid.Row ="0" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Facility" Width="97" Grid.RowSpan="2" Height="39" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="2" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Freezer" Height="30"  Width="99" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="3" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Air-conditioner"  Height="31"  Width="142"/>
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="4" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Microwave oven" Height="30"  Width="74"  />
+                <Label FontFamily="Times New Roman" FontSize="19" Grid.Row="5" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="left" Content="Washing Machine" Height="31"  Width="152"/>
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="6" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Fan"  Height="30"  Width="110" />
+                <Label FontFamily="Times New Roman" FontSize="15" Grid.Row="7" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="left" Content="Dish washing machine"  Height="31"  Width="152" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="8" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Oven"  Height="30"  Width="110" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="9" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Dehumidifier" Height="31" Width="142" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="10" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Ventilation fan" Height="30"  Width="142" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="11" Grid.Column = "5"  VerticalAlignment="Center" HorizontalAlignment="Left" Content="Sofa" Height="31"  Width="86" />
+                <Label FontFamily="Times New Roman" FontSize="20" Grid.Row="12" Grid.Column = "5" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Table" Height="30"  Width="86"  />
+
+                <Slider Name="Sliderfreezer" Grid.Column ="6" Grid.Row="2" VerticalAlignment="Center" Height="18" ValueChanged="Sliderfreezer_ValueChanged"/>
+                <Slider Name="Sliderairconditioner" Grid.Column ="6" Grid.Row="3" VerticalAlignment="Center" Height="18" ValueChanged="Sliderairconditioner_ValueChanged" />
+                <Slider Name="Slidermicrowaveoven" Grid.Column ="6" Grid.Row="4" VerticalAlignment="Center" Height="18" ValueChanged="Slidermicrowaveoven_ValueChanged" />
+                <Slider Name="Sliderwashingmachine" Grid.Column ="6" Grid.Row="5" VerticalAlignment="Center" Height="18" ValueChanged="Sliderwashingmachine_ValueChanged" />
+                <Slider Name="Sliderfan" Grid.Column ="6" Grid.Row="6" VerticalAlignment="Center" Height="18" ValueChanged="Sliderfan_ValueChanged" />
+                <Slider Name="Sliderdishwashingmachine" Grid.Column ="6" Grid.Row="7" VerticalAlignment="Center" Height="18" ValueChanged="Sliderdishwashingmachine_ValueChanged"/>
+                <Slider Name="Slideroven" Grid.Column ="6" Grid.Row="8" VerticalAlignment="Center" Height="18" ValueChanged="Slideroven_ValueChanged" />
+                <Slider Name="Sliderdehumidifier" Grid.Column ="6" Grid.Row="9" VerticalAlignment="Center" Height="18" ValueChanged="Sliderdehumidifier_ValueChanged" />
+                <Slider Name="Sliderventilationfan" Grid.Column ="6" Grid.Row="10" VerticalAlignment="Center" Height="18"  ValueChanged="Sliderventilationfan_ValueChanged" />
+                <Slider Name="Slidersofa" Grid.Column ="6" Grid.Row="11" VerticalAlignment="Center" Height="18"  ValueChanged="Slidersofa_ValueChanged"/>
+                <Slider Name="Slidertable" Grid.Column ="6" Grid.Row="12" VerticalAlignment="Center" Height="18" ValueChanged="Slidertable_ValueChanged"/>
+
+                <TextBox Name="Textboxfreezer" Grid.Column ="7" Grid.Row="2" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxairconditioner" Grid.Column ="7" Grid.Row="3" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxmicrowaveoven" Grid.Column ="7" Grid.Row="4" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxwashingmachine" Grid.Column ="7" Grid.Row="5" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxfan" Grid.Column ="7" Grid.Row="6" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxdishwashingmachine" Grid.Column ="7" Grid.Row="7" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxoven" Grid.Column ="7" Grid.Row="8" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxdehumidifier" Grid.Column ="7" Grid.Row="9" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxventilationfan" Grid.Column ="7" Grid.Row="10" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxsofa" Grid.Column ="7" Grid.Row="11" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+                <TextBox Name="Textboxtable" Grid.Column ="7" Grid.Row="12" Text="" VerticalAlignment="Center" IsReadOnly="True" Height="25"/>
+
+                <Label FontFamily="Times New Roman" FontSize="23" Grid.Row ="2" Grid.Column = "0" VerticalAlignment="Center" HorizontalAlignment="Left"  Width="200" Content="Assignment Date" />
+                <Label x:Name="Labelassignmentdate" FontFamily="Times New Roman" FontSize="23" Grid.Row ="3" Grid.Column = "0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Date" Width="120"  />
+                <Label x:Name="LabelSignature" FontFamily="Times New Roman" FontSize="23" Grid.Row ="4" Grid.Column = "0" VerticalAlignment="Center" HorizontalAlignment="Left"  Width="120" Content="Signature" />
+                <Rectangle Grid.Column="0" Grid.Row="5" Grid.RowSpan="5" Stroke="#FF0E0000" Margin="0,30,10,30"/>
+                <Label x:Name="Labelpremisecode" FontFamily="Times New Roman" FontSize="20" Grid.Row ="10" Grid.Column = "0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="274"  />
+
+                <StackPanel Grid.Column="0" Grid.Row="11" Grid.RowSpan="2">
+                    <Button Name="BtnSave" Margin="10,3,10,3" MinHeight="50"  FontSize="20" Click="BtnSave_Click" >Save
+                        <Button.Background>
+                            <SolidColorBrush Color="Gray" />
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False" >
+                                <TextBlock Margin="3" >Press to save the record</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="12" Grid.RowSpan="2">
+                    <Button Name="BtnCancel" Margin="10,3,10,3" MinHeight="50"  FontSize="20" Click="BtnCancel_Click" >Cancel
+                        <Button.Background>
+                            <SolidColorBrush Color="Gray" />
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False">
+                                <TextBlock Margin="3" >Exit the current screen</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+        </TabItem>
+    </TabControl>
 </Window>

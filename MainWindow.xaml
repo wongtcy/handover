@@ -6,47 +6,103 @@
         xmlns:local="clr-namespace:Handover"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-  
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/Columnbackground.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="Col1" Width="288*"/>
-            <ColumnDefinition x:Name="Col2" Width="245*" />
-            <ColumnDefinition x:Name="Col3" Width="267*"/>
+            <ColumnDefinition x:Name="Col1" Width="286*" />
+            <ColumnDefinition x:Name="Col2" Width="247*" />
+            <ColumnDefinition x:Name="Col3" Width="267*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition x:Name="Row1"/>
             <RowDefinition x:Name="Row2"/>
+            <RowDefinition x:Name="Row3"/>
+            <RowDefinition x:Name="Row4"/>
+            <RowDefinition x:Name="Row5"/>
+            <RowDefinition x:Name="Row6"/>
+            <RowDefinition x:Name="Row7"/>
+            <RowDefinition x:Name="Row8"/>
+            <RowDefinition x:Name="Row9"/>
+            <RowDefinition x:Name="Row10"/>
+            <RowDefinition x:Name="Row11"/>
+            <RowDefinition x:Name="Row12"/>
+            <RowDefinition x:Name="Row13"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
-            <TextBox Text="Enter text here" x:Name="textbox1" Height="32" VerticalAlignment="Top"/>
-            <Button x:Name="button1" Height="32" Click="button1_Click" ToolTip="Search" Content="Search" VerticalAlignment="Top"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="0" VerticalAlignment="center" HorizontalAlignment="Left" Content="Premise Code"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="1" VerticalAlignment="center" HorizontalAlignment="Left" Content="Address (English)"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="2" VerticalAlignment="center" HorizontalAlignment="Left" Content="Address (Chinese)"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="3" VerticalAlignment="center" HorizontalAlignment="Left" Content="Management Share"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="4" VerticalAlignment="center" HorizontalAlignment="Left" Content="Management fee Unit"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="5" VerticalAlignment="center" HorizontalAlignment="Left" Content="Sales Area"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="6" VerticalAlignment="center" HorizontalAlignment="Left" Content="Actual Area..."/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="7" VerticalAlignment="center" HorizontalAlignment="Left" Content="Window Area"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="8" VerticalAlignment="center" HorizontalAlignment="Left" Content="Roof Area"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="9" VerticalAlignment="center" HorizontalAlignment="Left" Content="Working Area"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="10" VerticalAlignment="center" HorizontalAlignment="Left" Content="Useable Area"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="11" VerticalAlignment="center" HorizontalAlignment="Left" Content="Management fee advance"/>
+        <Label FontFamily="Times New Roman" FontSize="20" Grid.Column ="1" Grid.Row="12" VerticalAlignment="center" HorizontalAlignment="Left" Content="Management fee deposit"/>
+
+        <TextBox x:Name="txtpremisecode" Grid.Column ="2" Grid.Row="0" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox x:Name="txtaddresseng" Grid.Column ="2" Grid.Row="1" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox x:Name="txtaddresschn" Grid.Column ="2" Grid.Row="2" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="3" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="4" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="5" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="6" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="7" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="8" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="9" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="10" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="11" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+        <TextBox Grid.Column ="2" Grid.Row="12" Text="" VerticalAlignment="center" IsReadOnly="True" Height="25"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+            <Label FontFamily="Times New Roman" FontSize="20" VerticalAlignment="center" HorizontalAlignment="Left" Content="Premise Code">
+            </Label>
+            <TextBox x:Name="TxtSearch" Text="" VerticalAlignment="center" IsReadOnly="false" MinWidth="100" Height="25" ToolTip="Input the premise code for searching" />
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.RowSpan="2">
-            <Label Content="Address line 1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
-            <TextBox IsEnabled="False" Text="Address line 1" Width="200" Height="32" VerticalAlignment="Top"/>
-            <Separator />
-            <Label Content="Address line 2" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <TextBox IsEnabled="False" Text="Address line 2" Width="200" Height="32" VerticalAlignment="Top"/>
-            <Separator />
-            <Label Content="Address line 3" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <TextBox IsEnabled="False" Text="Address line 3" Width="200" Height="32" VerticalAlignment="Top"/>
-            <Separator />
-            <Label Content="Address line 4" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <TextBox IsEnabled="False" Text="Address line 4" Width="200" Height="32" VerticalAlignment="Top"/>
-            <Separator />
-            <Label Content="Share" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <TextBox IsEnabled="False" Text="Share" Width="200" Height="32" VerticalAlignment="Top"/>
-            <Separator />
-            <Label Content="Management fee unit"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox IsEnabled="False" Text="Management fee unit" Width="200" Height="32" VerticalAlignment="Top"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="5" Grid.RowSpan="2">
+            <Button Name="BtnSearch" Margin="10,3,10,3" MinHeight="50" Click="BtnSearch_Click" FontSize="20">Search
+                <Button.Background>
+                    <SolidColorBrush Color="Gray" />
+                </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False">
+                        <TextBlock Margin="3" >Input the premise code and search the premise</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
-        <Menu>
-            <MenuItem/>
-            <Button/>
-        </Menu>
+
+        <StackPanel Grid.Column="0" Grid.Row="6" Grid.RowSpan="2">
+            <Button Name="BtnSave" Margin="10,3,10,3" MinHeight="50"  FontSize="20" Click="BtnSave_Click">Save
+                <Button.Background>
+                    <SolidColorBrush Color="Gray" />
+                </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False">
+                        <TextBlock Margin="3" >Press and save the record</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="7" Grid.RowSpan="2">
+            <Button Name="BtnCancel" Margin="10,3,10,3" MinHeight="50"  FontSize="20" Click="BtnCancel_Click" >Cancel
+                <Button.Background>
+                    <SolidColorBrush Color="Gray" />
+                </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False">
+                        <TextBlock Margin="3" >Confirm and exit the application</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
     </Grid>
 
-  </Window>
+</Window>

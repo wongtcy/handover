@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,10 +13,12 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Dapper;
 
 /// Programmer : Tony Wong
 /// Date : 2024-01-24
@@ -31,28 +36,58 @@ namespace Handover
         public MainWindow()
         {
             InitializeComponent();
-            setTimer();
         }
 
-        //private void setTimer()
-        //{
-        //    DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-        //    dispatcherTimer.Tick += dispatcherTimer_Tick;
-        //    dispatcherTimer.Interval = TimeSpan.FromSeconds(10);
-        //    dispatcherTimer.Start();
-        //}
-
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Loadpremises()
         {
-            if (textbox1.Text.Trim().Length == 10)
+            string connectionString = "Data Source = localhost; Initial Catalog = dbProperty_DEV; user id= sa; password = sa";
+
+
+            // Retrieve data
+            using (IDbConnection conn = new SqlConnection(connectionString))
             {
-                keyWindow keywin = new keyWindow();
-                keywin.Show();
+                var sql = "SELECT * FROM tblPremises WHERE premisesID = '" + TxtSearch.Text + "'";
+                var _premises = conn.Query<premises>(sql).ToList();
+                if (_premises.Count == 0)
+                {
+                    MessageBox.Show("Invalid premises ID!", "REMINDER", MessageBoxButton.OK);
+                    return;
+                }
+                else
+                {
+                    txtpremisecode.Text = _premises?.ToList().FirstOrDefault().PremisesID;
+                    txtaddresseng.Text = _premises?.ToList().FirstOrDefault().ProAddressEng;
+                    txtaddresschn.Text = _premises?.ToList().FirstOrDefault().ProAddressChn;
+                }
+            }
+        }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtSearch.Text.Trim().Length == 10)
+            {
+                Loadpremises();
             }
             else 
             {
                 MessageBox.Show("Please input the property account code!", "REMINDER", MessageBoxButton.OK);
             }
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure?","Confirm to exit",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            keyWindow keywin = new keyWindow();
+            keywin.Labelpremisecode.Content = "Premise ID : "+txtpremisecode.Text; 
+            keywin.Show();
         }
     }
 }

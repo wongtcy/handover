@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Handover"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
     </Application.Resources>
+
 </Application>
