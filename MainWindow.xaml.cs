@@ -30,7 +30,11 @@ namespace Handover
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// programmer : Tony Wong
+    /// date : 2024-03-09
+    /// Version : 1.0
+    /// Name : Handover window
+    /// Purpose : Main window for the handover app
     public partial class MainWindow : Window
     {
         public MainWindow()
