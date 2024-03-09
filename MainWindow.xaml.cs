@@ -48,21 +48,19 @@ namespace Handover
 
 
             // Retrieve data
-            using (IDbConnection conn = new SqlConnection(connectionString))
+            using IDbConnection conn = new SqlConnection(connectionString);
+            var sql = "SELECT * FROM tblPremises WHERE premisesID = '" + TxtSearch.Text + "'";
+            var _premises = conn.Query<premises>(sql).ToList();
+            if (_premises.Count == 0)
             {
-                var sql = "SELECT * FROM tblPremises WHERE premisesID = '" + TxtSearch.Text + "'";
-                var _premises = conn.Query<premises>(sql).ToList();
-                if (_premises.Count == 0)
-                {
-                    MessageBox.Show("Invalid premises ID!", "REMINDER", MessageBoxButton.OK);
-                    return;
-                }
-                else
-                {
-                    txtpremisecode.Text = _premises?.ToList().FirstOrDefault().PremisesID;
-                    txtaddresseng.Text = _premises?.ToList().FirstOrDefault().ProAddressEng;
-                    txtaddresschn.Text = _premises?.ToList().FirstOrDefault().ProAddressChn;
-                }
+                MessageBox.Show("Invalid premises ID!", "REMINDER", MessageBoxButton.OK);
+                return;
+            }
+            else
+            {
+                txtpremisecode.Text = _premises?.ToList().FirstOrDefault().PremisesID;
+                txtaddresseng.Text = _premises?.ToList().FirstOrDefault().ProAddressEng;
+                txtaddresschn.Text = _premises?.ToList().FirstOrDefault().ProAddressChn;
             }
         }
 
@@ -89,7 +87,7 @@ namespace Handover
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            keyWindow keywin = new keyWindow();
+            keyWindow keywin = new();
             keywin.Labelpremisecode.Content = "Premise ID : "+txtpremisecode.Text; 
             keywin.Show();
         }
